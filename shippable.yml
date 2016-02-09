@@ -34,14 +34,12 @@ build:
     - ls -al
 
   post_ci:
+    - docker build -t=shippabledocker/hitchcock4_sample_ruby 
     - docker push shippabledocker/hitchcock4_sample_ruby
 
 integrations:
   hub:
     - integrationName: ship-docker
       type: docker
-      branches:
-        only:
-          - master   
-
+    
 
